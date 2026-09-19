@@ -32,13 +32,13 @@ export const DiscoverView: React.FC = () => {
   }, [searchQuery, selectedCategory, sortBy]);
 
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 md:px-10">
+    <div className="min-h-screen pt-28 sm:pt-32 pb-24 px-5 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#9292A5] tracking-[0.25em] uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#39D9FF]" /> DISCOVERY INDEX // 2026
           </div>
-          <h1 className="font-display font-bold text-5xl sm:text-7xl text-[#F5F5FA] tracking-tight mb-4">DISCOVER WHAT'S NEXT</h1>
+          <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-[#F5F5FA] tracking-tight mb-4">DISCOVER WHAT'S NEXT</h1>
           <p className="font-sans text-lg text-[#9292A5] leading-relaxed">Curated speculative realities, interactive algorithms, non-Euclidean architectures, and generative acoustic ecosystems.</p>
         </div>
 
@@ -57,7 +57,7 @@ export const DiscoverView: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-12" role="group" aria-label="Project categories">
+        <div className="flex flex-wrap gap-2 mb-10" role="group" aria-label="Project categories">
           {categories.map((cat) => (
             <button key={cat} type="button" onClick={() => setSelectedCategory(cat)} aria-pressed={selectedCategory === cat} className={`px-4 py-1.5 rounded-full font-mono text-xs tracking-wider transition-all ${selectedCategory === cat ? 'bg-[#7C5CFF] text-[#F5F5FA] font-bold shadow-[0_0_15px_rgba(124,92,255,0.4)]' : 'bg-[#0A0A14] text-[#9292A5] border border-white/[0.06] hover:border-[#39D9FF]/40 hover:text-[#F5F5FA]'}`}>
               {cat}
@@ -66,9 +66,9 @@ export const DiscoverView: React.FC = () => {
         </div>
 
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
             {filtered.map((proj) => (
-              <button key={proj.id} type="button" onClick={() => openProject(proj.slug)} onMouseEnter={() => setCursorLabel('OPEN')} onMouseLeave={() => setCursorLabel(null)} className="group text-left rounded-3xl bg-[#0A0A14] border border-[#7C5CFF]/20 hover:border-[#39D9FF]/60 p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[230px]">
+              <button key={proj.id} type="button" onClick={() => openProject(proj.slug)} onMouseEnter={() => setCursorLabel('OPEN')} onMouseLeave={() => setCursorLabel(null)} className="group text-left rounded-3xl bg-[#0A0A14] border border-[#7C5CFF]/20 hover:border-[#39D9FF]/60 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(124,92,255,0.12)] p-6 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[230px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#39D9FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03030A]">
                 <div>
                   <div className="flex items-center justify-between font-mono text-[11px] mb-4">
                     <span className="text-[#39D9FF] uppercase tracking-wider font-semibold">{proj.category}</span>
