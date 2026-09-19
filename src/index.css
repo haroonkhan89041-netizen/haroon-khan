@@ -114,3 +114,42 @@
 .animate-orbit-reverse {
   animation: orbit-spin 48s linear infinite reverse;
 }
+
+
+/* Premium interaction polish */
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+  color: #F5F5FA;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(57, 217, 255, 0.75);
+  outline-offset: 3px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .glass-surface {
+    transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  }
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
