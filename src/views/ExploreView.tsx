@@ -10,7 +10,7 @@ export const ExploreView: React.FC = () => {
   const activeDim = WORLD_DIMENSIONS.find((d) => d.id === selectedId) || WORLD_DIMENSIONS[0];
 
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 md:px-10">
+    <div className="min-h-screen pt-28 sm:pt-32 pb-24 px-5 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <div className="max-w-3xl mb-14">
@@ -18,7 +18,7 @@ export const ExploreView: React.FC = () => {
             <Compass className="w-3.5 h-3.5 text-[#39D9FF]" />
             DIMENSIONAL NAVIGATION ATLAS
           </div>
-          <h1 className="font-display font-bold text-5xl sm:text-7xl text-[#F5F5FA] tracking-tight mb-4">
+          <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-[#F5F5FA] tracking-tight mb-4">
             EXPLORE THE UNKNOWN
           </h1>
           <p className="font-sans text-lg text-[#9292A5] leading-relaxed">
@@ -27,7 +27,7 @@ export const ExploreView: React.FC = () => {
         </div>
 
         {/* Sector Tabs Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-12">
           {WORLD_DIMENSIONS.map((dim) => {
             const isSelected = dim.id === selectedId;
             return (
@@ -36,10 +36,10 @@ export const ExploreView: React.FC = () => {
                 onClick={() => setSelectedId(dim.id)}
                 onMouseEnter={() => setCursorLabel(dim.title)}
                 onMouseLeave={() => setCursorLabel(null)}
-                className={`p-6 rounded-2xl text-left border transition-all duration-300 ${
+                className={`group p-5 sm:p-6 rounded-2xl text-left border transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#39D9FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03030A] ${
                   isSelected
                     ? 'bg-[#0A0A14] border-[#7C5CFF] shadow-[0_0_30px_rgba(124,92,255,0.25)]'
-                    : 'bg-[#0A0A14]/40 border-white/[0.04] hover:border-white/[0.15] hover:bg-[#0A0A14]/80'
+                    : 'bg-[#0A0A14]/40 border-white/[0.04] hover:border-white/[0.15] hover:bg-[#0A0A14]/80 hover:shadow-[0_12px_35px_rgba(124,92,255,0.12)]'
                 }`}
               >
                 <div
@@ -60,7 +60,7 @@ export const ExploreView: React.FC = () => {
         </div>
 
         {/* Dimension Spotlight Stage */}
-        <div className="rounded-3xl bg-[#0A0A14]/80 backdrop-blur-xl border border-[#7C5CFF]/30 p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="rounded-3xl bg-[#0A0A14]/80 backdrop-blur-xl border border-[#7C5CFF]/30 p-6 sm:p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3 font-mono text-xs">
               <span
@@ -70,7 +70,7 @@ export const ExploreView: React.FC = () => {
               <span className="text-[#39D9FF] font-semibold">SECTOR {activeDim.number} // ACTIVE</span>
             </div>
 
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-[#F5F5FA]">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#F5F5FA]">
               {activeDim.title}: {activeDim.subtitle}
             </h2>
 
@@ -107,7 +107,7 @@ export const ExploreView: React.FC = () => {
           </div>
 
           {/* Interactive Graphic Simulation Box */}
-          <div className="lg:col-span-5 h-80 rounded-2xl bg-[#03030A] border border-[#7C5CFF]/20 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+          <div className="lg:col-span-5 h-72 sm:h-80 rounded-2xl bg-[#03030A] border border-[#7C5CFF]/20 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
             <div
               className="absolute inset-0 opacity-20 pointer-events-none"
               style={{
