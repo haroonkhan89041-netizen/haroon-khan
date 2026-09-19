@@ -38,7 +38,7 @@ const normalizeRoute = (pathname: string) => {
 };
 
 const getProjectSlug = (pathname: string) => {
-  const match = pathname.match(/^/project/([^/]+)/);
+  const match = pathname.match(/^\/project\/([^/]+)/);
   return match ? decodeURIComponent(match[1]) : null;
 };
 
