@@ -20,8 +20,9 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 shrink-0">
-                <img src="/nexus-logo.svg" alt="" aria-hidden="true" className="w-full h-full" />
+              <div className="relative w-9 h-9 shrink-0 group/footer-logo">
+                <span className="absolute -inset-2 rounded-full bg-[#7C5CFF]/10 blur-md opacity-70 group-hover/footer-logo:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+                <img src="/nexus-logo.svg" alt="" aria-hidden="true" className="relative w-full h-full drop-shadow-[0_0_10px_rgba(124,92,255,0.3)] group-hover/footer-logo:drop-shadow-[0_0_15px_rgba(57,217,255,0.5)] transition-[filter] duration-500" />
               </div>
               <span className="font-display font-bold text-xl tracking-[0.25em] text-[#F5F5FA]">
                 NEXUS
