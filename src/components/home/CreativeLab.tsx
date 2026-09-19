@@ -167,15 +167,15 @@ export const CreativeLab: React.FC<CreativeLabProps> = ({ standalone = false }) 
   };
 
   return (
-    <section className={`relative px-6 md:px-10 ${standalone ? 'py-12' : 'py-28 border-t border-white/[0.04]'}`} aria-label="The Creative Lab">
+    <section className={`relative px-5 sm:px-6 md:px-10 ${standalone ? 'py-12' : 'py-24 sm:py-28 border-t border-white/[0.04]'}`} aria-label="The Creative Lab">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#9292A5] tracking-[0.25em] uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#39D9FF]" />
             GENERATIVE SPATIAL PROTOCOL
           </div>
-          <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[#F5F5FA] mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F5F5FA] mb-4">
             THE CREATIVE LAB
           </h2>
           <p className="font-sans text-base text-[#9292A5]">
@@ -217,7 +217,7 @@ export const CreativeLab: React.FC<CreativeLabProps> = ({ standalone = false }) 
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="“A futuristic city where architecture responds to human emotion with kinetic glass petals…”"
-              className="w-full rounded-2xl bg-[#03030A] border border-[#7C5CFF]/40 px-5 py-4 text-base md:text-lg text-[#F5F5FA] placeholder-[#9292A5]/50 focus:outline-none focus:border-[#39D9FF] focus:ring-1 focus:ring-[#39D9FF] transition-all resize-none font-sans"
+              className="w-full rounded-2xl bg-[#03030A] border border-[#7C5CFF]/40 px-5 py-4 text-base md:text-lg text-[#F5F5FA] placeholder-[#9292A5]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#39D9FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03030A] focus:border-[#39D9FF] focus:ring-1 focus:ring-[#39D9FF] transition-all resize-none font-sans"
               disabled={isGenerating}
             />
           </div>
