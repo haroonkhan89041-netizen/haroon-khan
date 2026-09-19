@@ -8,9 +8,9 @@ export const Hero: React.FC = () => {
   const [hoverWord, setHoverWord] = useState<string | null>(null);
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-6 md:px-10 pt-28 pb-16 overflow-hidden">
+    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-5 sm:px-6 md:px-10 pt-28 pb-16 overflow-hidden">
       {/* Subtle atmospheric center spotlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[900px] h-[500px] rounded-full bg-gradient-to-b from-[#7C5CFF]/12 via-[#39D9FF]/8 to-transparent blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] sm:w-[600px] md:w-[900px] h-[420px] sm:h-[500px] rounded-full bg-gradient-to-b from-[#7C5CFF]/12 via-[#39D9FF]/8 to-transparent blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
         {/* Eyebrow badge */}
@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Huge Enormous Headline */}
-        <h1 className="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.92] text-[#F5F5FA] mb-8 select-none">
+        <h1 className="font-display font-black text-[3.5rem] sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.92] text-[#F5F5FA] mb-8 select-none break-words">
           <span
             className="block transition-all duration-500 hover:text-[#39D9FF] hover:translate-x-1 inline-block"
             onMouseEnter={() => {
