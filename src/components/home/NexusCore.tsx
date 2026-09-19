@@ -45,6 +45,7 @@ export const NexusCore: React.FC = () => {
     if (!ctx) return;
 
     let animId: number;
+    let isRunning = true;
     let width = (canvas.width = canvas.parentElement?.clientWidth || 700);
     let height = (canvas.height = canvas.parentElement?.clientHeight || 600);
 
@@ -69,7 +70,8 @@ export const NexusCore: React.FC = () => {
     let time = 0;
 
     const render = () => {
-      time += 0.02;
+      if (!isRunning) return;
+      time += reducedMotion ? 0 : 0.02;
       ctx.clearRect(0, 0, width, height);
 
       const centerX = width / 2;
@@ -165,7 +167,7 @@ export const NexusCore: React.FC = () => {
 
       // Draw orbiting satellites & energy lines
       satellites.forEach((sat) => {
-        sat.angle += sat.orbitSpeed;
+        if (!reducedMotion) sat.angle += sat.orbitSpeed;
         const x = centerX + Math.cos(sat.angle) * sat.orbitRadius + tiltX;
         const y = centerY + Math.sin(sat.angle) * (sat.orbitRadius * 0.45) + tiltY;
 
@@ -226,16 +228,17 @@ export const NexusCore: React.FC = () => {
         ctx.restore();
       }
 
-      animId = requestAnimationFrame(render);
+      if (!reducedMotion) animId = requestAnimationFrame(render);
     };
 
     render();
 
     return () => {
+      isRunning = false;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', handleResize);
     };
-  }, [activeMode]);
+  }, [activeMode, reducedMotion]);
 
   const handleContainerMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (reducedMotion || !containerRef.current) return;
