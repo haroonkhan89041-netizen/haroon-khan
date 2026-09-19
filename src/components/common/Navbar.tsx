@@ -48,9 +48,8 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#39D9FF] rounded-lg p-1"
             aria-label="NEXUS Home"
           >
-            <div className="relative w-8 h-8 rounded-lg bg-[#0A0A14] border border-[#7C5CFF]/40 flex items-center justify-center overflow-hidden group-hover:border-[#39D9FF] transition-colors duration-300 shadow-[0_0_15px_rgba(124,92,255,0.2)]">
-              <div className="w-3 h-3 rounded-sm bg-gradient-to-tr from-[#7C5CFF] to-[#39D9FF] rotate-45 group-hover:rotate-90 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-[#39D9FF]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative w-9 h-9 shrink-0 transition-transform duration-500 group-hover:scale-105">
+              <img src="/nexus-logo.svg" alt="" aria-hidden="true" className="w-full h-full" />
             </div>
             <div className="flex flex-col text-left">
               <span className="font-display font-bold text-lg tracking-[0.25em] text-[#F5F5FA] group-hover:text-[#39D9FF] transition-colors">
