@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNexus } from '../../context/NexusContext';
-import { ArrowUpRight, Globe, Shield, Terminal, Download } from 'lucide-react';
+import { ArrowUpRight, Globe, Shield, Terminal } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { navigate, setCursorLabel } = useNexus();
@@ -89,16 +89,6 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 space-y-4">
             <h4 className="font-mono text-xs uppercase tracking-widest text-[#F5F5FA]">Governance</h4>
             <ul className="space-y-2.5 font-sans text-sm text-[#9292A5]">
-              <li>
-                <a
-                  href="/nexus-creative-universe.zip"
-                  download="nexus-creative-universe.zip"
-                  className="inline-flex items-center gap-1.5 text-[#39D9FF] hover:text-[#F5F5FA] transition-colors"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Download nexus-creative-universe.zip</span>
-                </a>
-              </li>
               <li>
                 <span className="hover:text-[#F5F5FA] cursor-default transition-colors">About Protocol</span>
               </li>
