@@ -26,29 +26,29 @@ export const DiscoveryUniverse: React.FC = () => {
   });
 
   return (
-    <section className="relative py-28 px-6 md:px-10 border-t border-white/[0.04]" aria-label="Discovery Universe">
+    <section className="relative py-24 sm:py-28 px-5 sm:px-6 md:px-10 border-t border-white/[0.04]" aria-label="Discovery Universe">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-5 md:gap-6">
           <div>
             <div className="font-mono text-xs text-[#9292A5] tracking-[0.25em] uppercase mb-3 flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5 text-[#39D9FF]" />
               EDITORIAL CURATION
             </div>
-            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-[#F5F5FA]">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F5F5FA]">
               DISCOVER WHAT'S NEXT
             </h2>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 onMouseEnter={() => setCursorLabel(cat.toUpperCase())}
                 onMouseLeave={() => setCursorLabel(null)}
-                className={`px-3.5 py-1.5 rounded-full font-mono text-xs tracking-wider transition-all duration-200 ${
+                className={`px-3 py-1.5 md:px-3.5 rounded-full font-mono text-xs tracking-wider transition-all duration-200 ${
                   selectedCategory === cat
                     ? 'bg-[#7C5CFF] text-[#F5F5FA] font-bold shadow-[0_0_15px_rgba(124,92,255,0.4)]'
                     : 'bg-[#0A0A14] text-[#9292A5] border border-white/[0.06] hover:border-[#39D9FF]/40 hover:text-[#F5F5FA]'
@@ -79,7 +79,7 @@ export const DiscoveryUniverse: React.FC = () => {
                 onClick={() => openProject(project.slug)}
                 onMouseEnter={() => setCursorLabel('VIEW')}
                 onMouseLeave={() => setCursorLabel(null)}
-                className={`group relative rounded-3xl bg-[#0A0A14]/70 backdrop-blur-md border border-[#7C5CFF]/20 hover:border-[#39D9FF]/60 p-6 md:p-8 transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_40px_rgba(124,92,255,0.25)] ${colSpan} ${
+                className={`group relative rounded-3xl bg-[#0A0A14]/70 backdrop-blur-md border border-[#7C5CFF]/20 hover:border-[#39D9FF]/60 hover:-translate-y-1 p-6 md:p-8 transition-all duration-500 cursor-pointer overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_0_45px_rgba(124,92,255,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#39D9FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03030A] hover:shadow-[0_0_40px_rgba(124,92,255,0.25)] ${colSpan} ${
                   idx % 2 === 1 ? 'md:translate-y-4' : ''
                 }`}
               >
@@ -114,7 +114,7 @@ export const DiscoveryUniverse: React.FC = () => {
                 </div>
 
                 {/* Visual Showcase Specimen */}
-                <div className="relative w-full h-44 sm:h-52 rounded-2xl bg-[#03030A] border border-white/[0.04] mb-6 overflow-hidden flex items-center justify-center group-hover:border-[#7C5CFF]/40 transition-colors">
+                <div className="relative w-full h-40 sm:h-52 rounded-2xl bg-[#03030A] border border-white/[0.04] mb-6 overflow-hidden flex items-center justify-center group-hover:border-[#7C5CFF]/40 transition-colors">
                   {/* Geometric Wireframe Visual Preview */}
                   <div className="relative z-10 flex flex-col items-center">
                     <div
